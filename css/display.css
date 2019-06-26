@@ -1,0 +1,9 @@
+body{
+  color: black;
+}
+#footer{
+  color: white;
+}
+.card{
+  display: inline-block;
+}

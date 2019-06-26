@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran|Questrial" rel="stylesheet">
+    <!--Bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--Custom css-->
+    <link rel="stylesheet" href="/photocopy/css/style.css">
+    <!--Title Logo-->
+    <link rel="icon" href="/photocopy/img/store.png" type="image/icon type">
+    <title>Photocopy | Home</title>
+  </head>
+  <body>
+    <section id="main">
+      <div class="container">
+        <div id="logo">
+          <a href="index.html"><img src="/photocopy/img/store.png" alt="logo" width="250px"></a>
+          <h3>Photocopy <span>Shop</span></h3>
+        </div>
+        <!--Form section-->
+        <div class="form_bg">
+          <div class="form">
+            <!--Form heading-->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="student-tab" data-toggle="tab" href="#student" role="tab" aria-controls="student" aria-selected="true">Student</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" id="faculty-tab" data-toggle="tab" href="#faculty" role="tab" aria-controls="faculty" aria-selected="false">Faculty</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" id="dept-tab" data-toggle="tab" href="#dept" role="tab" aria-controls="dept" aria-selected="false">Department</a>
+              </li>
+            </ul>
+            <br>
+            <!--Forms-->
+            <div class="tab-content" id="myTabContent">
+
+              <!--Form 1-->
+              <div class="tab-pane fade show active" id="student" role="tabpanel" aria-labelledby="student-tab">
+                <div class="container-fluid" id="form_bg">
+                  <form method="post" action="./successful.php" enctype="multipart/form-data" >
+                    <input type="hidden" name="user_type" value="1">
+                    Personal details
+                    <hr>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Gagan Prasad" required>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>USN</label>
+                        <input type="text" name="usn" class="form-control" placeholder="1NH16IS033" required pattern="[0-9][A-Za-z]{2}[0-9]{2}[A-Za-z]{2}[0-9]{3}" >
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Department</label>
+                        <input type="text" name="dept" class="form-control" placeholder="ISE" required pattern="[A-Za-z]{3}">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Mobile number</label>
+                        <input type="number" name="mobile" class="form-control" placeholder="9066127177" required>
+                      </div>
+                    </div>
+                    Printing details
+                    <hr>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>No. of pages for color | ₹10/page</label>
+                        <input type="text" name="n_color" class="form-control" value="0" required>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>No. of pages for black & white | ₹2/page</label>
+                        <input type="text" name="n_bw" class="form-control" value="0" required>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>No. of Copies</label>
+                        <input type="text" name="n_copies" class="form-control" value="1" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Binding</label><br>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="binding" value="No Binding" checked>
+                        <label class="form-check-label"> No Binding | ₹0 </label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="binding" value="Tape Binding">
+                        <label class="form-check-label"> Tape Binding | ₹15 </label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="binding" value="Soft Binding">
+                        <label class="form-check-label"> Soft Binding | ₹20 </label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="binding" value="Spiral Binding">
+                        <label class="form-check-label"> Spiral Binding | ₹25 </label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="binding" value="Hard Binding">
+                        <label class="form-check-label"> Hard Binding | ₹30 </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Select a file </label>
+                      <input type="file" name="Filename" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Specific details</label>
+                      <textarea class="form-control" name="details" rows="3"></textarea>
+                    </div>
+                    <!-- <div id="total">
+                      Total<span> ₹0 </span>
+                    </div> -->
+                    <br>
+                    <input type="submit" name="" class="btn c" value="Confirm">
+                    <input type="reset" name="" class="btn" value="Reset">
+                  </form>
+                </div>
+              </div>
+
+              <!--Form 2-->
+              <div class="tab-pane fade" id="faculty" role="tabpanel" aria-labelledby="faculty-tab">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="print-tab" data-toggle="tab" href="#print" role="tab" aria-controls="print" aria-selected="true">Print</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="store-tab" data-toggle="tab" href="#store" role="tab" aria-controls="store" aria-selected="false">Store</a>
+                  </li>
+                </ul>
+                <br>
+                <div class="tab-content" id="myTabContent">
+                  <!--Print-->
+                  <div class="tab-pane fade show active" id="print" role="tabpanel" aria-labelledby="print-tab">
+                    <form method="post" action="./successful.php" enctype="multipart/form-data">
+                      <input type="hidden" name="user_type" value="2">
+                      Personal details
+                      <hr>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Name</label>
+                          <input type="text" name="name" class="form-control" placeholder="Roshan Singh" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Department</label>
+                          <input type="text" name="dept" class="form-control" placeholder="BSH" required>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Mobile number</label>
+                          <input type="text" name="mobile" class="form-control" placeholder="677853422" required>
+                        </div>
+                      </div>
+                      Printing details
+                      <hr>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>No. of pages for color | ₹10/page</label>
+                          <input type="text" name="n_color" class="form-control" value="0" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>No. of pages for black & white | ₹2/page</label>
+                          <input type="text" name="n_bw" class="form-control" value="0" required>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>No. of Copies</label>
+                          <input type="text" name="n_copies" class="form-control" value="1" required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Binding</label><br>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="No Binding" checked>
+                          <label class="form-check-label"> No Binding | ₹0 </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="Tape Binding">
+                          <label class="form-check-label"> Tape Binding | ₹15 </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="Soft Binding">
+                          <label class="form-check-label"> Soft Binding | ₹20 </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="Spiral Binding">
+                          <label class="form-check-label"> Spiral Binding | ₹25 </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="Hard Binding">
+                          <label class="form-check-label"> Hard Binding | ₹30 </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Select a file </label>
+                        <input type="file" name="Filename" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Specific details</label>
+                        <textarea class="form-control" name="details" rows="3"></textarea>
+                      </div>
+                      <!-- <div id="total">
+                        Total<span> ₹0 </span>
+                      </div> -->
+                      <br>
+                      <input type="submit" name="" class="btn c" value="Confirm">
+                      <input type="reset" name="" class="btn" value="Reset">
+                    </form>
+                  </div>
+                  <!--Store-->
+                  <div class="tab-pane fade" id="store" role="tabpanel" aria-labelledby="store-tab">
+                    <form method="post" action="./successful.php" enctype="multipart/form-data">
+                      <input type="hidden" name="user_type" value="4">
+                      <!-- Personal details
+                      <hr> -->
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Name</label>
+                          <input type="text" name="name" class="form-control" placeholder="Akash Singh" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Subject</label>
+                          <input type="text" name="subject" class="form-control" placeholder="Physics" required>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Department</label>
+                          <input type="text" name="dept" class="form-control" placeholder="BSH" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Semester</label>
+                          <input type="text" name="sem" class="form-control" placeholder="2nd" required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Select a file </label>
+                        <input type="file" name="Filename" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" name="desc" rows="3" required></textarea>
+                      </div>
+                      <br>
+                      <input type="submit" name="" class="btn c" value="Confirm">
+                      <input type="reset" name="" class="btn" value="Reset">
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!--Form 3-->
+              <div class="tab-pane fade" id="dept" role="tabpanel" aria-labelledby="dept-tab">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="print-tab" data-toggle="tab" href="#print1" role="tab" aria-controls="print" aria-selected="true">Print</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="store-tab" data-toggle="tab" href="#store1" role="tab" aria-controls="store" aria-selected="false">Store</a>
+                  </li>
+                </ul>
+                <br>
+                <div class="tab-content" id="myTabContent">
+                  <!--Print-->
+                  <div class="tab-pane fade show active" id="print1" role="tabpanel" aria-labelledby="print-tab">
+                    <form method="post" action="./successful.php" enctype="multipart/form-data">
+                      <input type="hidden" name="user_type" value="3">
+                      Personal details
+                      <hr>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Name</label>
+                          <input type="text" name="name" class="form-control" placeholder="Harry P" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Department</label>
+                          <input type="text" name="dept" class="form-control" placeholder="Accounts" required>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Mobile number</label>
+                          <input type="text" name="mobile" class="form-control" placeholder="7786454567" required>
+                        </div>
+                      </div>
+                      Printing details
+                      <hr>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>No. of pages for color | ₹10/page</label>
+                          <input type="text" name="n_color" class="form-control" value="0" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>No. of pages for black & white | ₹2/page</label>
+                          <input type="text" name="n_bw" class="form-control" value="0" required>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>No. of Copies</label>
+                          <input type="text" name="n_copies" class="form-control" value="1" required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Binding</label><br>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="No Binding" checked>
+                          <label class="form-check-label"> No Binding | ₹0 </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="Tape Binding">
+                          <label class="form-check-label"> Tape Binding | ₹15 </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="Soft Binding">
+                          <label class="form-check-label"> Soft Binding | ₹20 </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="Spiral Binding">
+                          <label class="form-check-label"> Spiral Binding | ₹25 </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="binding" value="Hard Binding">
+                          <label class="form-check-label"> Hard Binding | ₹30 </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Select a file </label>
+                        <input type="file" name="Filename" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Specific details</label>
+                        <textarea class="form-control" name="details" rows="3"></textarea>
+                      </div>
+                      <!-- <div id="total">
+                        Total<span> ₹0 </span>
+                      </div> -->
+                      <br>
+                      <input type="submit" name="" class="btn c" value="Confirm">
+                      <input type="reset" name="" class="btn" value="Reset">
+                    </form>
+                  </div>
+                  <!--Store-->
+                  <div class="tab-pane fade" id="store1" role="tabpanel" aria-labelledby="store-tab">
+                    <form method="post" action="./successful.php" enctype="multipart/form-data">
+                      <input type="hidden" name="user_type" value="5">
+                      <!-- Personal details
+                      <hr> -->
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Department</label>
+                          <input type="text" name="dept" class="form-control" placeholder="accounts" required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Select a file </label>
+                        <input type="file" name="Filename" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" name="desc" rows="3" required></textarea>
+                      </div>
+                      <br>
+                      <input type="submit" name="" class="btn c" value="Confirm">
+                      <input type="reset" name="" class="btn" value="Reset">
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="bottom">
+      <!-- <a href="successful.html">successful</a> -->
+      <div id="footer">
+        © 2019 Gagan Prasad, Inc. All rights reserved.
+      </div>
+    </section>
+  </body>
+</html>
